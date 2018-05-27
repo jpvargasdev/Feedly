@@ -39,7 +39,7 @@ class FeedView extends Component{
         this.props.clearCurrentInterval();
         this.props.setInterval(
             this.tick,
-            Utils.setTimeToMinutes(time) // TODO: use Utils.setTimeToMinutes(time), the current line is only for test
+            time * 1000 // TODO: use Utils.setTimeToMinutes(time), the current line is only for test
         );
     }
 
