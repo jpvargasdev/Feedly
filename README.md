@@ -27,7 +27,7 @@ Installation
 Run on iOS emulator
 -----------------------------------------------------------------------------
 
-* Option 1
+* Option 1 **recommended**
 1. Move inside ios folder inside the project folder and open the file **Feedly.xcodeproj**.
 2. Select your emulator device and click in the play button
 <br>
@@ -42,7 +42,7 @@ Run on iOS emulator
 
  Run on iOS device
 -----------------------------------------------------------------------------
-* Option 1
+* Option 1 
 1. Move inside ios folder inside the project folder and open the file **Feedly.xcodeproj**.
 2. Move to Feedly -> Signing and select a Team
 <br>
