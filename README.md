@@ -62,7 +62,7 @@ If you want to run without the Metro Bundler:
 2. Select your device and click in the play button
 3. Wait and enjoy
 
-Test
+Update interval Test
 -----------------------------------------------------------------------------
 1. Move to folder project -> src -> routes -> FeedView -> index.js and jump to the line 42
 <br>
