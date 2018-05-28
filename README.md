@@ -59,3 +59,12 @@ If you want to run without the Metro Bundler:
 
 2. Select your device and click in the play button
 3. Wait and enjoy
+
+Test
+-----------------------------------------------------------------------------
+1. Move to folder project -> src -> routes -> FeedView -> index.js and jump to the line 42
+<br>
+<img height="200" src="https://github.com/TheLastClown/Feedly/blob/master/src/common/assets/app_assets/change.png"/>
+</br>
+
+If you want to set timer in minutes delete `time * 1000` and change with `Utils.setTimeToMinutes(time)`, save and reload
