@@ -26,17 +26,19 @@ Installation
 
 Run on iOS emulator
 -----------------------------------------------------------------------------
-* Option 1
-1. Run the next line in the console `react-native run-ios` 
-2. Wait and enjoy
 
-* Option 2
+* Option 1
 1. Move inside ios folder inside the project folder and open the file **Feedly.xcodeproj**.
 2. Select your emulator device and click in the play button
 <br>
 <img height="300" src="https://github.com/TheLastClown/Feedly/blob/master/src/common/assets/app_assets/playemulator.png"/>
 </br>
 3. Wait and enjoy
+
+* Option 2
+1. Run the next line in the console `react-native run-ios` 
+2. Wait and enjoy
+
 
  Run on iOS device
 -----------------------------------------------------------------------------
