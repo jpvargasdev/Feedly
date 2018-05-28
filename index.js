@@ -7,9 +7,13 @@ import { AppRegistry } from 'react-native';
 import IndexApp from './src/routes';
 import { Provider } from 'react-redux';
 
-//Hide yellow warning unknown issue
 import { YellowBox } from 'react-native';
+
+//Hide yellow warning unknown issue
+// =============================================//
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
+YellowBox.ignoreWarnings(['Class RCTCxxModule']);
+// =============================================//
 
 import configureStore from './src/config/store';
 
