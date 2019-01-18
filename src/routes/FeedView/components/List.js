@@ -2,18 +2,18 @@
  * List component
  */
 "use strict";
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 import {
     FlatList,
-} from 'react-native';
-import { connect } from 'react-redux';
+} from "react-native";
+import { connect } from "react-redux";
 
-import Item from './Item';
-import EmptyField from '../../../common/components/EmptyField';
-import EmptyData from '../../../common/components/EmptyData';
-import Error from '../../../common/components/Error';
+import Item from "./Item";
+import EmptyField from "../../../common/components/EmptyField";
+import EmptyData from "../../../common/components/EmptyData";
+import Error from "../../../common/components/Error";
 
-import { getData } from '../../../actions/actionsFeed';
+import { getData } from "../../../actions/actionsFeed";
 
 /* Component ========================= */
 

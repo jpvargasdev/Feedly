@@ -2,38 +2,42 @@
  * Container SplashView
  */
 
-import React from 'react';
+import React from "react";
 import {
     View,
     StyleSheet,
-    StatusBar,
-    Platform
-} from 'react-native';
-import { colors } from '../../../common/styles';
+    StatusBar
+} from "react-native";
+
+// styles
+import { colors } from "../../../common/styles";
+
+// type
+const PropsType = {
+    children: Object
+};
+
+/* Style ============================== */
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        justifyContent:"center",
+        alignItems: "center",
+        backgroundColor: colors.colorPrimary
+    }
+});
 
 /* Component ============================== */
-
-const Container = props => (
+const Container = ({children}): PropsType => (
     <View style = {styles.container}>
         <StatusBar
             barStyle="light-content"
-            backgroundColor = 'white'
+            backgroundColor = "white"
             animated = {true}
             hidden = {true}
         />
-        {props.children}
+        {children}
     </View>
 );
 
 export default Container;
-
-/* Style ============================== */
-
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent:'center',
-        alignItems: 'center',
-        backgroundColor: colors.colorPrimary
-    }
-});

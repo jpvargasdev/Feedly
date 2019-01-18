@@ -2,39 +2,45 @@
  * Splash View Component
  */
 
-import React, { Component } from 'react';
-import {
-    Animated,
-} from 'react-native';
-import { StackActions, NavigationActions } from 'react-navigation';
-import { connect } from 'react-redux';
+import React, { PureComponent } from "react";
+import { Animated } from "react-native";
+import { StackActions, NavigationActions } from "react-navigation";
+import { connect } from "react-redux";
 
-import Container from './container';
-import Logo from './components/Logo';
-import TextLogo from './components/TextLogo';
-import ParamModel from '../../models/ParamModel';
+// components
+import Container from "./container";
+import Logo from "./components/Logo";
+import TextLogo from "./components/TextLogo";
+import ParamModel from "../../models/ParamModel";
 
-import { updateFeedTheme, updateMinutesInterval, updateNumberPosts} from '../../actions/actionsFilterFeed';
+import { updateFeedTheme, updateMinutesInterval, updateNumberPosts} from "../../actions/actionsFilterFeed";
 
+// Types
+type PropsType = {
+    updateFeedTheme: Function,
+    updateNumberPosts: Function,
+    updateMinutesInterval: Function
+};
+type StateType = {
+    fadeAnim: Object
+};
+
+// constants
 const resetAction = StackActions.reset({  
     index: 0,
     actions: [
-        NavigationActions.navigate({ routeName: 'MainView' })
+        NavigationActions.navigate({ routeName: "MainView" })
     ],
 });
 
 /* Component =========================== */
-
-class SplashView extends Component {
-
+class SplashView extends PureComponent<PropsType, StateType> {
     state = {
         fadeAnim: new Animated.Value(0),
     }
 
     componentDidMount() {
-
         this.updateData();
-
         const { navigation } = this.props;
         Animated.timing(                  
             this.state.fadeAnim,            
@@ -43,19 +49,19 @@ class SplashView extends Component {
                 duration: 1500,             
             }
         ).start();  
-
         setTimeout( () => {
             navigation.dispatch( resetAction );        
         }, 2500);                      
     }
 
     updateData(){
-        let category = new ParamModel('category', 'business');
-        let pageSize = new ParamModel('pageSize', 10);
+        const { updateFeedTheme, updateNumberPosts, updateMinutesInterval } = this.props;
+        const category = new ParamModel("category", "business");
+        const pageSize = new ParamModel("pageSize", 10);
 
-        this.props.updateFeedTheme(category);
-        this.props.updateNumberPosts(pageSize);
-        this.props.updateMinutesInterval(5);
+        updateFeedTheme(category);
+        updateNumberPosts(pageSize);
+        updateMinutesInterval(5);
     }
 
     render(){
@@ -69,7 +75,6 @@ class SplashView extends Component {
 }
 
 /* Connect to store =========================== */
-
 const mapDispatchToProps = dispatch => {
     return {
         updateFeedTheme: (theme) => dispatch(updateFeedTheme(theme)),

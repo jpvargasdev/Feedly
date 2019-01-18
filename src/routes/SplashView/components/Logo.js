@@ -2,27 +2,22 @@
  * Logo component
  */
 
-import React from 'react';
+import React from "react";
 import {
-    View,
     Text,
     StyleSheet,
     Animated
-} from 'react-native';
-import { colors, fonts, padding, dimensions } from '../../../common/styles';
+} from "react-native";
 
-/* Component =========================== */
+// style
+import { colors, fonts, padding } from "../../../common/styles";
 
-const Logo = props => (
-    <Animated.View style={{opacity:props.fade}}>
-        <Text style={styles.logoText}>Feedly</Text>
-    </Animated.View>
-);
-
-export default Logo;
+// type
+const PropsType = {
+    fade: Number
+};
 
 /* Style =========================== */
-
 const styles = StyleSheet.create({
     logoText:{
         marginTop: padding.lg,
@@ -30,3 +25,12 @@ const styles = StyleSheet.create({
         color: colors.activeIconL
     }
 });
+
+/* Component =========================== */
+const Logo = ({ fade }): PropsType => (
+    <Animated.View style={{ opacity: fade }}>
+        <Text style={styles.logoText}>Feedly</Text>
+    </Animated.View>
+);
+
+export default Logo;

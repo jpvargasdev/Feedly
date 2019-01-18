@@ -1,12 +1,12 @@
 /**
  * Item text settings
  */
-import React from 'react';
+import React from "react";
 import {
     Text,
     StyleSheet
-} from 'react-native';
-import { fonts, colors, padding } from '../../../common/styles';
+} from "react-native";
+import { fonts, colors, padding } from "../../../common/styles";
 
 /* Component ===================================== */
 

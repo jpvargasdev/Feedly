@@ -1,13 +1,13 @@
 /**
  * Settings view
  */
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-import Container from './container';
-import SettingsForm from './components/SettingsForm';
-import { updateFeedTheme, updateNumberPosts, updateMinutesInterval } from '../../actions/actionsFilterFeed';
-import ParamModel from '../../models/ParamModel';
+import Container from "./container";
+import SettingsForm from "./components/SettingsForm";
+import { updateFeedTheme, updateNumberPosts, updateMinutesInterval } from "../../actions/actionsFilterFeed";
+import ParamModel from "../../models/ParamModel";
 
 /* Component ===================================== */
 
@@ -15,12 +15,12 @@ class SettingsView extends Component{
 
 
     _updateTheme = (theme) => {
-        let category = new ParamModel('category', theme);
+        let category = new ParamModel("category", theme);
         this.props.updateFeedTheme(category);
     }
 
     _updateNumberPosts = (number) => {
-        let pageSize = new ParamModel('pageSize', number);
+        let pageSize = new ParamModel("pageSize", number);
         this.props.updateNumberPosts(pageSize);
     }
 

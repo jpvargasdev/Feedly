@@ -1,19 +1,19 @@
 /**
  * Field text input
  */
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 import {
     View,
     StyleSheet,
     TextInput
-} from 'react-native';
+} from "react-native";
 
 /* Component ============================ */
 
 class FieldText extends PureComponent{
 
     state={
-        text:''
+        text:""
     }
 
     componentDidMount(){
@@ -51,8 +51,8 @@ export default FieldText;
 const styles = StyleSheet.create({
     container:{
         borderWidth:1,
-        borderColor:'gray',
-        justifyContent:'center',
+        borderColor:"gray",
+        justifyContent:"center",
         padding:10,
         width: 80
     }

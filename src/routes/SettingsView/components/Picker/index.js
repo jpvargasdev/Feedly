@@ -1,17 +1,17 @@
 /**
  * Picker
  */
-import React, {PureComponent} from 'react';
+import React, {PureComponent} from "react";
 import {
     View,
     Picker,
     StyleSheet,
     Text,
     TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/dist/Ionicons';
-import ModalPicker from './components/ModalPicker';
-import { colors, fonts } from '../../../../common/styles';
+} from "react-native";
+import Icon from "react-native-vector-icons/dist/Ionicons";
+import ModalPicker from "./components/ModalPicker";
+import { colors, fonts } from "../../../../common/styles";
 
 /* Component ====================================== */
 
@@ -48,9 +48,9 @@ class PickerPlatform extends PureComponent {
                     style={styles.containerPicker}>
                     <Text style={styles.textItem}> {this.state.itemValue ? this.state.itemValue:this.props.title} </Text>
                     <Icon
-                        name={'md-arrow-dropdown'}
+                        name={"md-arrow-dropdown"}
                         size={20}
-                        color={'black'}
+                        color={"black"}
                     />
                 </TouchableOpacity>
                 <ModalPicker
@@ -73,17 +73,17 @@ export default PickerPlatform;
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#fafafa',
+        backgroundColor:"#fafafa",
         shadowOffset:{ width: 0,  height: 2 },
-        shadowColor: '#cecece',
+        shadowColor: "#cecece",
         shadowOpacity: 1,
         borderRadius:2,
         width:150
     },
     containerPicker:{
-        flexDirection: 'row',
-        justifyContent:'space-between',
-        alignItems:'center',
+        flexDirection: "row",
+        justifyContent:"space-between",
+        alignItems:"center",
         padding:5
     },
     textItem:{

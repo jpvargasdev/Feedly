@@ -1,7 +1,7 @@
 /**
  * Feed actions
  */
-import { getFeedData } from '../api/apiGetFeedData';
+import { getFeedData } from "../api/apiGetFeedData";
 
 /* ============================================== */
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-import { URL_SERVER } from '../config/urls';
+import { URL_SERVER } from "../config/urls";
 
 class Api{
 
@@ -9,9 +9,9 @@ class Api{
 
     static headers(){
         return{
-            'Authorization': this.auth,
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
+            "Authorization": this.auth,
+            "Accept": "application/json",
+            "Content-Type": "application/json",
         }
     }
 
@@ -24,14 +24,14 @@ class Api{
         if ( query_params.length ){
             let params = "";
             for (let i in query_params){
-                params += query_params[i].key + "=" + query_params[i].value +'&';
+                params += query_params[i].key + "=" + query_params[i].value +"&";
             }
             route += "?" + params;
             route = route.substring(0, route.length - 1);
 
         }
 
-        return this.xhr(route,null, 'GET');
+        return this.xhr(route,null, "GET");
     }
 
     static xhr(route, params, verb){

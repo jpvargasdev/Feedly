@@ -2,14 +2,14 @@
  * Container SettingsView
  */
 
-import React from 'react';
+import React from "react";
 import {
     StyleSheet,
     StatusBar,
-} from 'react-native';
-import { SafeAreaView } from 'react-navigation';
+} from "react-native";
+import { SafeAreaView } from "react-navigation";
 
-import { colors } from '../../../common/styles';
+import { colors } from "../../../common/styles";
 
 /* Component ============================== */
 
@@ -17,7 +17,7 @@ const Container = props => (
     <SafeAreaView style = {styles.container}>
         <StatusBar
             barStyle="dark-content"
-            backgroundColor = 'white'
+            backgroundColor = "white"
             animated = {true}
             hidden = {false}
         />
@@ -32,8 +32,8 @@ export default Container;
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        justifyContent:'center',
-        alignItems: 'center',
+        justifyContent:"center",
+        alignItems: "center",
         marginTop: 50,
         marginBottom:20,
     }

@@ -1,21 +1,20 @@
 /**
  * Utils
  */
-"use strict";
 const Utils = {
   setTimeToMinutes: function(num) {
     return num * 60 * 1000;
   },
 
   formatDate: function(date){
-    let firstSection = date.split('T')[0];
-    let secondSection = date.split('T')[1];
+    const firstSection = date.split("T")[0];
+    const secondSection = date.split("T")[1];
 
-    let year = firstSection.split('-')[0];
-    let month = firstSection.split('-')[1]
-    let day = firstSection.split('-')[2]
-    let hour = secondSection.split(':')[0];
-    let minute = secondSection.split(':')[1];
+    const year = firstSection.split("-")[0];
+    const month = firstSection.split("-")[1]
+    const day = firstSection.split("-")[2]
+    const hour = secondSection.split(":")[0];
+    const minute = secondSection.split(":")[1];
 
     return `${day}/${month}/${year} ${hour}:${minute}`;
   }

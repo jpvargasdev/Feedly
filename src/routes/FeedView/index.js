@@ -1,30 +1,43 @@
 /**
  * MainView with posts
  */
-"use strict";
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-import Container from './container';
-import List from './components/List';
-import Search from './components/Search';
+// components
+import Container from "./container";
+import List from "./components/List";
+import Search from "./components/Search";
 
-import { getData } from '../../actions/actionsFeed';
-import setIntervalHOC from '../../decorators/setIntervalHOC';
-import Utils from '../../utils/Utils';
+// actions
+import { getData } from "../../actions/actionsFeed";
+import setIntervalHOC from "../../decorators/setIntervalHOC";
+import Utils from "../../utils/Utils";
  
+// type
+type PropsType = {
+    numberOfPosts: Number,
+    feedTheme: String,
+    interval: Number,
+    topic: String
+};
+type StateType = {
+    feedTheme: String,
+    numberOfPosts: Number
+};
+
+// constants
 const TAG = "FeedView";
-/* Component ========================= */
 
-class FeedView extends Component{
-
+/* Component ================== */
+class FeedView extends Component<PropsType, StateType>{
     state = {
         feedTheme:null,
         numberOfPosts:null,
-    }
+    };
 
     componentDidMount(){
-        let { feedTheme , numberOfPosts, interval } = this.props;
+        const { feedTheme , numberOfPosts, interval } = this.props;
 
         this.setState({feedTheme, numberOfPosts});
         this.reloadInterval(interval);
@@ -35,11 +48,13 @@ class FeedView extends Component{
     }
 
     reloadInterval = (time) => {
-        console.log(TAG + ': Updating interval to ' + time + ' minute(s)');
-        this.props.clearCurrentInterval();
-        this.props.setInterval(
+        const { clearCurrentInterval, setInterval } = this.props;
+        console.log(TAG + ": Updating interval to " + time + " minute(s)");
+
+        clearCurrentInterval();
+        setInterval(
             this.tick,
-            time * 1000 // TODO: use Utils.setTimeToMinutes(time), the current line is only for test
+            Utils.setTimeToMinutes(time) // TODO: use Utils.setTimeToMinutes(time), the current line is only for test
         );
     }
 
@@ -104,8 +119,7 @@ class FeedView extends Component{
 }
 
 /* Store connection ================== */
-
-function mapStateToProps(state, props){
+function mapStateToProps(state){
     return {
         numberOfPosts:state.dataFeedFilter.numberOfPosts,
         feedTheme:state.dataFeedFilter.feedTheme,

@@ -1,7 +1,7 @@
 /**
  * Modal picker
  */
-import React from 'react';
+import React from "react";
 import {
     View,
     StyleSheet,
@@ -10,10 +10,10 @@ import {
     Text,
     TouchableWithoutFeedback,
     ScrollView,
-} from 'react-native';
-import Modal from 'react-native-modal';
+} from "react-native";
+import Modal from "react-native-modal";
 
-import { colors, fonts } from '../../../../../common/styles';
+import { colors, fonts } from "../../../../../common/styles";
 
 /* Component ====================================== */
 
@@ -22,8 +22,8 @@ const ModalPicker = (props) => (
         isVisible={props.isVisible}
         animationInTiming={500}
         animationOutTiming={500}
-        animationIn='fadeIn'
-        animationOut='fadeOut'>
+        animationIn="fadeIn"
+        animationOut="fadeOut">
             <View style={styles.pickerContainerIos}>
                 <View style={styles.containerButtons}>
                     <Button
@@ -60,9 +60,9 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     containerButtons: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        backgroundColor: '#efefe9',
+        flexDirection: "row",
+        justifyContent: "space-between",
+        backgroundColor: "#efefe9",
         borderBottomWidth: StyleSheet.hairlineWidth,
         borderBottomColor: colors.dividersD,
         borderTopLeftRadius: 10,
@@ -71,16 +71,16 @@ const styles = StyleSheet.create({
         paddingVertical: 3
     },
     pickerContainerIos: {
-        backgroundColor: '#fafafa',
+        backgroundColor: "#fafafa",
         borderRadius: 10,
     },
     pickerContainerAndroid: {
-        backgroundColor: '#fafafa',
+        backgroundColor: "#fafafa",
         borderRadius: 5,
     },
     line:{
         borderTopWidth:StyleSheet.hairlineWidth,
         marginHorizontal:10,
-        borderColor: 'gray'
+        borderColor: "gray"
     }
 });

@@ -1,8 +1,7 @@
 /**
  * HOC Interval
  */
-"use strict";
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 function setIntervalHOC(WrappedComponent) {
     return class WithSetInterval extends Component {

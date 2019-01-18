@@ -1,28 +1,28 @@
 /**
  * Search bar
  */
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 import {
     StyleSheet,
     TextInput,
     View,
     TouchableOpacity,
     ActivityIndicator,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/dist/Ionicons';
-import { connect } from 'react-redux';
+} from "react-native";
+import Icon from "react-native-vector-icons/dist/Ionicons";
+import { connect } from "react-redux";
 
-import Card from '../../../common/components/Card';
-import { dimensions } from '../../../common/styles';
-import ParamModel from '../../../models/ParamModel';
-import { updateTopic } from '../../../actions/actionsFilterFeed';
+import Card from "../../../common/components/Card";
+import { dimensions } from "../../../common/styles";
+import ParamModel from "../../../models/ParamModel";
+import { updateTopic } from "../../../actions/actionsFilterFeed";
 
 /* Component ========================= */
 
 class Search extends PureComponent {
 
     state = {
-        fieldText:'',
+        fieldText:"",
     }
 
     _clearField = () =>{
@@ -30,7 +30,7 @@ class Search extends PureComponent {
     }
 
     _onSubmit = () =>{
-        let topic = new ParamModel('q', this.state.fieldText);
+        let topic = new ParamModel("q", this.state.fieldText);
         this.props.updateTopic(topic);
         this.props.fetchData(topic);
     }
@@ -42,12 +42,12 @@ class Search extends PureComponent {
                     <Icon
                         name={"ios-search"}
                         size={20}
-                        color='gray'
+                        color="gray"
                     />
                 </View>
                 
                 <TextInput
-                    placeholder={'Write a topic'}
+                    placeholder={"Write a topic"}
                     style={styles.textInputStyle}
                     onSubmitEditing={this._onSubmit}
                     value={this.state.fieldText}
@@ -59,9 +59,9 @@ class Search extends PureComponent {
                         onPress={this._clearField}
                         style={styles.IconContainer}>
                         <Icon
-                            name={'ios-close'}
+                            name={"ios-close"}
                             size={30}
-                            color={'red'}
+                            color={"red"}
                         /> 
                     </TouchableOpacity>
                 }
@@ -70,9 +70,9 @@ class Search extends PureComponent {
                         onPress={this._onSubmit}
                         style={styles.IconContainer}>
                         <Icon
-                            name={'ios-send'}
+                            name={"ios-send"}
                             size={25}
-                            color={'blue'}
+                            color={"blue"}
                         /> 
                     </TouchableOpacity>   
                 }
@@ -80,7 +80,7 @@ class Search extends PureComponent {
                 {this.props.isFetching &&
                     <ActivityIndicator
                         style={{ paddingHorizontal: 5 }}
-                        color={'red'}
+                        color={"red"}
                     />
                 }
 
@@ -110,7 +110,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Search);
 
 const styles = StyleSheet.create({
     containerCard:{
-        flexDirection: 'row',
+        flexDirection: "row",
         marginVertical:5,
         marginHorizontal:30,
         paddingHorizontal:10,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     },
     IconContainer:{
         flex:0.1,
-        alignItems:'center',
-        justifyContent:'center',
+        alignItems:"center",
+        justifyContent:"center",
     }
 });

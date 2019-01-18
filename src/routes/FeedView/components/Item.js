@@ -1,43 +1,40 @@
 /**
  * Item post card
  */
-"use strict";
-import React from 'react';
+import React from "react";
 import {
     Text,
     StyleSheet,
     View
-} from 'react-native';
-import Ionicons from 'react-native-vector-icons/dist/Ionicons';
+} from "react-native";
+import Ionicons from "react-native-vector-icons/dist/Ionicons";
 
-import { dimensions,colors, padding, fonts } from '../../../common/styles';
-import Card from '../../../common/components/Card';
-import Utils from '../../../utils/Utils';
+import { colors, fonts } from "../../../common/styles";
+import Card from "../../../common/components/Card";
+import Utils from "../../../utils/Utils";
 
 /* Component ========================= */
-
-const Item = props => {
-    let item = props.item;
+const Item = ({ item }) => {
     return(
         <Card style={styles.cardStyle}>
             <View style={styles.header}>
                 <View style={styles.containerHorizontal}>
                     <Ionicons
-                        name={'ios-person'}
+                        name={"ios-person"}
                         size={20}
                         color={colors.activeIconD}
                     />
-                    <Text style={styles.author}>{item.author ? item.author : 'Anonimous'}</Text>
+                    <Text style={styles.author}>{item.author ? item.author : "Anonimous"}</Text>
                 </View>
             </View>
             <Text style={styles.title}>{item.title}</Text>
             <View style={styles.containerDescription}>
-                <Text style={styles.description}>{item.description ? item.description : 'No description available'}</Text>
+                <Text style={styles.description}>{item.description ? item.description : "No description available"}</Text>
             </View>
             <View style={styles.footerDate}>
                 <View style={styles.containerHorizontal}>
                     <Ionicons
-                        name={'ios-calendar'}
+                        name={"ios-calendar"}
                         size={15}
                         color={colors.activeIconD}
                     />
@@ -59,9 +56,9 @@ const styles = StyleSheet.create({
         padding:10,
     },
     containerHorizontal:{
-        flexDirection: 'row',
-        justifyContent:'center',
-        alignItems:'center',
+        flexDirection: "row",
+        justifyContent:"center",
+        alignItems:"center",
     },
     containerDescription:{
         marginVertical: 10,
@@ -71,12 +68,12 @@ const styles = StyleSheet.create({
         padding:10
     },
     footerDate:{
-        justifyContent:'center',
-        alignItems:'flex-end'
+        justifyContent:"center",
+        alignItems:"flex-end"
     },
     header:{
-        justifyContent:'center',
-        alignItems:'flex-start'
+        justifyContent:"center",
+        alignItems:"flex-start"
     },
     author:{
         fontSize:fonts.body2,
@@ -97,7 +94,7 @@ const styles = StyleSheet.create({
     title:{
         fontSize: fonts.subHeading,
         marginBottom:10,
-        textAlign: 'center',
+        textAlign: "center",
         color: colors.primaryTextD
     },
 });

@@ -2,13 +2,13 @@
  * Este reducer guarda el usuario en el state global de la app
  */
 
-import { actions } from '../actions/actionsFeed';
+import { actions } from "../actions/actionsFeed";
 
 const initialState = {
     data:[],
     isFetching: false,
     error: false,
-    errorText: ''
+    errorText: ""
 }
 
 export default function dataFeed (state = initialState, action) {

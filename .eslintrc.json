@@ -1,0 +1,48 @@
+{
+    "globals": {
+        "window": true,
+        "btoa": true,
+        "FormData": true,
+        "alert": true
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "react",
+        "react-native"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        }
+    },
+    "extends" : [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "airbnb-base"
+    ],
+    "rules" : {
+        "arrow-body-style" : "warn",
+        "indent": ["error", 2],
+        "quotes": ["error", "double"],
+        "class-methods-use-this": ["error", 
+            { "exceptMethods": [
+                "render", 
+                "componentDidMount", 
+                "componentWillReceiveProps", 
+                "componentShouldUpdate"
+                ] 
+            }],
+        "comma-dangle": ["error", {
+            "arrays": "never",
+            "objects": "never",
+            "imports": "never",
+            "exports": "never",
+            "functions": "ignore"
+        }],
+        "import/no-unresolved": [
+            2,
+            { "ignore": ["^@"] }
+        ]
+    }
+}

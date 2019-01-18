@@ -2,7 +2,7 @@
  * Este reducer guarda el usuario en el state global de la app
  */
 
-import { actions } from '../actions/actionsFilterFeed';
+import { actions } from "../actions/actionsFilterFeed";
 
 const initialState = {
     numberOfPosts:null,
