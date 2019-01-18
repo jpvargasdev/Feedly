@@ -1,11 +1,12 @@
 /**
- * App Main Mobile
+ * App Main Web
  */
 import React from "react";
 import ReactDOM from "react-dom";
-import "./feedly/index.css";
-import { AppRegistry } from "react-native";
+import "./index.css";
 import { Provider } from "react-redux";
+import configureStore from "../src-mobile/config/store";
+import WebApp from "./App";
 
 // constants
 const store = configureStore();
@@ -14,8 +15,9 @@ const store = configureStore();
 
 const App = () => (
     <Provider store = {store}>
-        <IndexApp/>
+        <WebApp/>
     </Provider>
 );
 
-AppRegistry.registerComponent(appName, () => App);
+
+ReactDOM.render(<WebApp />, document.getElementById("root"));
