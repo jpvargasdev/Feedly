@@ -3,10 +3,10 @@
  */
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./common/styles/index.css";
 import { Provider } from "react-redux";
-import configureStore from "../src-mobile/config/store";
-import WebApp from "./App";
+import configureStore from "./config/store";
+import WebApp from "./www/Home/index.js";
 
 // constants
 const store = configureStore();
@@ -14,10 +14,10 @@ const store = configureStore();
 /* Component Mobile ============================================ */
 
 const App = () => (
-    <Provider store = {store}>
-        <WebApp/>
-    </Provider>
+  <Provider store = {store}>
+    <WebApp/>
+  </Provider>
 );
 
 
-ReactDOM.render(<WebApp />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
