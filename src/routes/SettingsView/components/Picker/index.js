@@ -15,71 +15,71 @@ import ModalPicker from "./components/ModalPicker";
 import { colors, fonts } from "../../../../common/styles";
 
 type PropsType = {
-    updateTheme: Function,
-    options: Array,
-    title: String
+  updateTheme: Function,
+  options: Array,
+  title: String
 };
 type StateType = {
-    isVisible: Boolean,
-    itemValue: Object
+  isVisible: Boolean,
+  itemValue: Object
 };
 
 /* Component ====================================== */
 class PickerPlatform extends PureComponent<PropsType, StateType> {
-    state={
-      isVisible: false,
-      itemValue: null
-    }
+  state={
+    isVisible: false,
+    itemValue: null
+  }
 
-    componentDidMount() {
-      const { feedTheme } = this.props;
-      this.setState({
-        itemValue: feedTheme
-      });
-    }
+  componentDidMount() {
+    const { feedTheme } = this.props;
+    this.setState({
+      itemValue: feedTheme
+    });
+  }
 
-    onDoneButton = () => {
-      const { updateTheme } = this.props;
-      const { itemValue } = this.state;
-      this.setState({
-        isVisible: false
-      });
-      updateTheme(itemValue);
-    }
+  onDoneButton = () => {
+    const { updateTheme } = this.props;
+    const { itemValue } = this.state;
+    this.setState({
+      isVisible: false
+    });
+    updateTheme(itemValue);
+  }
 
-    onCancelButton = () => {
-      this.setState({
-        isVisible: false
-      });
-    }
+  onCancelButton = () => {
+    this.setState({
+      isVisible: false
+    });
+  }
 
-    render() {
-      const { options, title } = this.props;
-      const { itemValue, isVisible } = this.state;
-      return (
-        <View style={styles.container}>
-          <TouchableOpacity
-            onPress={() => this.setState({ isVisible: true })}
-            style={styles.containerPicker}>
-            <Text style={styles.textItem}> {itemValue || title} </Text>
-            <Icon
-              name={"md-arrow-dropdown"}
-              size={20}
-              color={"black"}
-            />
-          </TouchableOpacity>
-          <ModalPicker
-            title={title}
-            options={options}
-            selectedValue={itemValue}
-            onValueChange={itemValue => this.setState({ itemValue })}
-            isVisible={isVisible}
-            doneButtonAction={this.onDoneButton}
-            cancelButtonAction={this.onCancelButton}
+  render() {
+    const { options, title } = this.props;
+    const { itemValue, isVisible } = this.state;
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity
+          onPress={() => this.setState({ isVisible: true })}
+          style={styles.containerPicker}>
+          <Text style={styles.textItem}> {itemValue || title} </Text>
+          <Icon
+            name={"md-arrow-dropdown"}
+            size={20}
+            color={"black"}
           />
-        </View>
-      );
-    }
+        </TouchableOpacity>
+        <ModalPicker
+          title={title}
+          options={options}
+          selectedValue={itemValue}
+          onValueChange={itemValue => this.setState({ itemValue })}
+          isVisible={isVisible}
+          doneButtonAction={this.onDoneButton}
+          cancelButtonAction={this.onCancelButton}
+        />
+      </View>
+    );
+  }
 }
 
 export default PickerPlatform;
