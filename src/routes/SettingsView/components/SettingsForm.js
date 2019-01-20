@@ -23,14 +23,14 @@ type PropsType = {
     numberOfPosts: Number,
     updateMinutesInterval: Function,
     interval: Object,
-    updateTheme:
+    updateTheme: Object
 };
 
 // constants
 const THEMES = ["Select theme", "business(default)", "entertainment", "general", "health", "science", "sports", "technology"]
 
 /* Component ===================================== */
-const SettingsForm = ({ updateNumberPosts, numberOfPosts, updateMinutesInterval, interval, updateTheme }): PropsType => {
+const SettingsForm = ({ updateNumberPosts, numberOfPosts, updateMinutesInterval, interval, updateTheme, feedTheme }): PropsType => {
     return(
         <Card style={styles.cardContainer}>
             <Text style={styles.textTitle}>Configure your feed</Text>
@@ -53,6 +53,7 @@ const SettingsForm = ({ updateNumberPosts, numberOfPosts, updateMinutesInterval,
             <View style={styles.containerHorizontal}>
                 <ItemText>Feed theme:</ItemText>
                 <Picker
+                    feedTheme={feedTheme}
                     updateTheme={updateTheme}
                     title={"Select theme"}
                     options={THEMES}/>

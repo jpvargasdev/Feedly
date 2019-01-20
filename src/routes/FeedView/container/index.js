@@ -5,7 +5,8 @@
 import React from "react";
 import {
   StyleSheet,
-  StatusBar
+  StatusBar,
+  Platform
 } from "react-native";
 import { SafeAreaView } from "react-navigation";
 
@@ -31,6 +32,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 40
+    ...Platform.select({
+      ios: {
+        marginTop: 40
+      },
+      android: {
+        marginTop: 60
+      }
+    })
   }
 });

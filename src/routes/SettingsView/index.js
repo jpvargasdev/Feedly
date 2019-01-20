@@ -1,7 +1,7 @@
 /**
  * Settings view
  */
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 
 // components
@@ -21,31 +21,32 @@ type PropsType = {
 };
 
 /* Component ===================================== */
-class SettingsView extends PureComponent<PropsType> {
-    _updateTheme = (theme) => {
+class SettingsView extends Component<PropsType> {
+    updateTheme = (theme) => {
       const category = new ParamModel("category", theme);
       this.props.updateFeedTheme(category);
     }
 
-    _updateNumberPosts = (number) => {
+    updateNumberPosts = (number) => {
       const pageSize = new ParamModel("pageSize", number);
       this.props.updateNumberPosts(pageSize);
     }
 
-    _updateMinutesInterval = (minutes) => {
+    updateMinutesInterval = (minutes) => {
       this.props.updateMinutesInterval(minutes);
     }
 
     render() {
+      const { numberOfPosts, feedTheme, interval } = this.props;
       return (
         <Container>
           <SettingsForm
-            updateTheme = {this._updateTheme}
-            updateNumberPosts = {this._updateNumberPosts}
-            updateMinutesInterval = {this._updateMinutesInterval}
-            numberOfPosts = {this.props.numberOfPosts.value }
-            feedTheme = { this.props.feedTheme.value }
-            interval = { this.props.interval }
+            updateTheme = {this.updateTheme}
+            updateNumberPosts = {this.updateNumberPosts}
+            updateMinutesInterval = {this.updateMinutesInterval}
+            numberOfPosts = { numberOfPosts.value }
+            feedTheme = { feedTheme.value }
+            interval = { interval }
           />
         </Container>
       );

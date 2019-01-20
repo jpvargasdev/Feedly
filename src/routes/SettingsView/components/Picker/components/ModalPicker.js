@@ -56,7 +56,6 @@ const ModalPicker = ({
         ))}
       </Picker>
     </View>
-        }
   </Modal>
 );
 

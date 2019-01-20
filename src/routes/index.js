@@ -18,6 +18,8 @@ import SplashView from "./SplashView";
 import FeedView from "./FeedView";
 import SettingsView from "./SettingsView";
 
+// export default from "../../storybook";
+
 /* Navigator ============================== */
 const IndexApp = createStackNavigator({
   SplashView,
@@ -42,13 +44,13 @@ const IndexApp = createStackNavigator({
         tabBarLabel: "Settings",
         tabBarIcon: ({ tintColor, focused }) => (
           <Ionicons
-            name={focused ? "ios-settings" : "ios-settings-outline"}
+            name={focused ? "ios-albums" : "ios-albums-outline"}
             size={24}
             style={{ color: tintColor }}
           />
         )
       }
-    }
+    },
   }, {
     tabBarOptions: {
       activeTintColor: colors.colorPrimaryDark,

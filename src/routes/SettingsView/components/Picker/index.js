@@ -31,6 +31,14 @@ class PickerPlatform extends PureComponent<PropsType, StateType> {
       itemValue: null
     }
 
+    componentDidMount() {
+      const { feedTheme } = this.props;
+      console.warn(feedTheme);
+      this.setState({
+        itemValue: feedTheme
+      });
+    }
+
     onDoneButton = () => {
       const { updateTheme } = this.props;
       const { itemValue } = this.state;

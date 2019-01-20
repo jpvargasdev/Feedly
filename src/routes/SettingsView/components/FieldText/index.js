@@ -4,9 +4,11 @@
 import React, { PureComponent } from "react";
 import {
   View,
-  StyleSheet,
   TextInput
 } from "react-native";
+
+// styles
+import styles from "./styles";
 
 type PropsType = {
     onEdit: Function,
@@ -23,7 +25,7 @@ class FieldText extends PureComponent<PropsType, StateType> {
     componentDidMount() {
       const { text } = this.props;
       if (text) {
-        this.setState({ text: newText });
+        this.setState({ text });
       }
     }
 
@@ -43,7 +45,7 @@ class FieldText extends PureComponent<PropsType, StateType> {
             onEndEditing={this.onEndEdit}
             onChangeText={ text => this.setState({ text })}
             onSubmitEditing={this.onEndEdit}
-            value={text}
+            value={`${text}`}
           />
         </View>
       );
@@ -51,15 +53,3 @@ class FieldText extends PureComponent<PropsType, StateType> {
 }
 
 export default FieldText;
-
-/* Style ============================ */
-
-const styles = StyleSheet.create({
-  container: {
-    borderWidth: 1,
-    borderColor: "gray",
-    justifyContent: "center",
-    padding: 10,
-    width: 80
-  }
-});

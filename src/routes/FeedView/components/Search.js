@@ -20,86 +20,86 @@ import ParamModel from "../../../models/ParamModel";
 import { updateTopic } from "../../../actions/actionsFilterFeed";
 
 type PropsType = {
-    isFetching: Boolean
+  isFetching: Boolean
 };
 type StateType = {
-    fieldText: String
+  fieldText: String
 };
 
 /* Component ========================= */
 class Search extends PureComponent<PropsType, StateType> {
-    state = {
-      fieldText: ""
-    };
+  state = {
+    fieldText: ""
+  };
 
-    clearField = () => {
-      this.setState({ fieldText: "" });
-    }
+  clearField = () => {
+    this.setState({ fieldText: "" });
+  }
 
-    onSubmit = () => {
-      const { updateTopic, fetchData } = this.props;
-      const { fieldText } = this.state;
+  onSubmit = () => {
+    const { updateTopic, fetchData } = this.props;
+    const { fieldText } = this.state;
 
-      const topic = new ParamModel("q", fieldText);
+    const topic = new ParamModel("q", fieldText);
 
-      updateTopic(topic);
-      fetchData(topic);
-    }
+    updateTopic(topic);
+    fetchData(topic);
+  }
 
-    render() {
-      const { isFetching } = this.props;
-      const { fieldText } = this.state;
-      return (
-        <Card style={styles.containerCard}>
-          <View style={styles.IconContainer}>
-            <Icon
-              name={"ios-search"}
-              size={20}
-              color="gray"
-            />
-          </View>
-
-          <TextInput
-            placeholder={"Write a topic"}
-            style={styles.textInputStyle}
-            onSubmitEditing={this.onSubmit}
-            value={fieldText}
-            onChangeText={value => this.setState({ fieldText: value })}
+  render() {
+    const { isFetching } = this.props;
+    const { fieldText } = this.state;
+    return (
+      <Card style={styles.containerCard}>
+        <View style={styles.IconContainer}>
+          <Icon
+            name={"ios-search"}
+            size={20}
+            color="gray"
           />
+        </View>
 
-          {!isFetching
-                    && <TouchableOpacity
-                      onPress={this.clearField}
-                      style={styles.IconContainer}>
-                      <Icon
-                        name={"ios-close"}
-                        size={30}
-                        color={"red"}
-                      />
-                    </TouchableOpacity>
-          }
-          {!isFetching && fieldText.length > 3
-                    && <TouchableOpacity
-                      onPress={this.onSubmit}
-                      style={styles.IconContainer}>
-                      <Icon
-                        name={"ios-send"}
-                        size={25}
-                        color={"blue"}
-                      />
-                    </TouchableOpacity>
-          }
+        <TextInput
+          placeholder={"Write a topic"}
+          style={styles.textInputStyle}
+          onSubmitEditing={this.onSubmit}
+          value={fieldText}
+          onChangeText={value => this.setState({ fieldText: value })}
+        />
 
-          {isFetching
-                    && <ActivityIndicator
-                      style={{ paddingHorizontal: 5 }}
-                      color={"red"}
-                    />
-          }
+        {!isFetching
+          && <TouchableOpacity
+            onPress={this.clearField}
+            style={styles.IconContainer}>
+            <Icon
+              name={"ios-close"}
+              size={30}
+              color={"red"}
+            />
+          </TouchableOpacity>
+        }
+        {!isFetching && fieldText.length > 3
+          && <TouchableOpacity
+            onPress={this.onSubmit}
+            style={styles.IconContainer}>
+            <Icon
+              name={"ios-send"}
+              size={25}
+              color={"blue"}
+            />
+          </TouchableOpacity>
+        }
 
-        </Card>
-      );
-    }
+        {isFetching
+          && <ActivityIndicator
+            style={{ paddingHorizontal: 5 }}
+            color={"red"}
+          />
+        }
+
+      </Card>
+    );
+  }
 }
 
 /* Connection to Store ========================= */
