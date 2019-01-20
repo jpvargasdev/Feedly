@@ -33,7 +33,6 @@ class PickerPlatform extends PureComponent<PropsType, StateType> {
 
     componentDidMount() {
       const { feedTheme } = this.props;
-      console.warn(feedTheme);
       this.setState({
         itemValue: feedTheme
       });
