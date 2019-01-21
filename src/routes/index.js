@@ -50,7 +50,7 @@ const IndexApp = createStackNavigator({
           />
         )
       }
-    },
+    }
   }, {
     tabBarOptions: {
       activeTintColor: colors.colorPrimaryDark,

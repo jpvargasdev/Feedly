@@ -16,7 +16,7 @@ type PropsType = {
 };
 
 /* Component ======================= */
-const Card = ({ children, style }): PropsType => {
+const Card = ({ children, style }: PropsType) => {
   if (Platform.OS === "web") {
     return (
       <WView style={[styles.container, style]}>

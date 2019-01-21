@@ -30,10 +30,10 @@ export default function dataFeed(state = initialState, action) {
   }
 
   case actions.UPDATE_INTERVAL: {
-    const interval = action.payload.minutes;
+    const { minutes } = action.payload;
     return {
       ...state,
-      interval
+      interval: minutes
     };
   }
 

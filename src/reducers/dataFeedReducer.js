@@ -29,7 +29,7 @@ export default function dataFeed(state = initialState, action) {
   }
 
   case actions.FETCHING_DATA_SUCCESS: {
-    const data = action.payload.data;
+    const { data } = action.payload;
     return {
       ...state,
       isFetching: false,
