@@ -1,6 +1,6 @@
 
 # Feedly
-React-native iOS application feed reader powered by NewsAPI.org ( https://newsapi.org/ )
+React-native CrossPlatform (iOS, Android and Web) application feed reader powered by NewsAPI.org ( https://newsapi.org/ )
 
 Features
 ----------------------------------------------------------------------------
@@ -23,6 +23,32 @@ Installation
 2. Move inside the repository with the command line
 3. Run the next line:
 `npm install`
+
+Run on Android emulator
+-----------------------------------------------------------------------------
+* Option 1 **recommended**
+1. Open the android folder with android studio.
+2. Select your emulator device and click in the play button
+3. Wait and enjoy
+
+* Option 2
+1. Open android studio and run the emulator
+2. Run the next line in the console `react-native run-android` 
+3. Wait and enjoy
+
+
+ Run on Android device
+-----------------------------------------------------------------------------
+* Option 1 **recommended**
+1. Open the android folder with android studio.
+2. Select your device connected and click in the play button
+3. Wait and enjoy
+
+* Option 2
+1. Open android studio and run the emulator
+2. Run the next line in the console `react-native run-android` 
+3. Wait and enjoy
+
 
 Run on iOS emulator
 -----------------------------------------------------------------------------
@@ -61,6 +87,11 @@ If you want to run without the Metro Bundler:
 
 2. Select your device and click in the play button
 3. Wait and enjoy
+
+Run on Web
+-----------------------------------------------------------------------------
+1. Run `yarn start:web`.
+2. Wait and enjoy.
 
 Update interval Test
 -----------------------------------------------------------------------------
